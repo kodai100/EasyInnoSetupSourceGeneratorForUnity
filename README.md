@@ -23,3 +23,14 @@ UnityでビルドされたWindows用ソフトウェアのインストーラを�
 ```
 $ EasyInnoSetupForUnity.exe C:\Users\user\Template.txt C:\Users\user\sample.iss -i com.kodai100.someapp -n someapp -v 1.0.0 -p kodai100 -u https://kodai100.com -e someapp.exe -r C:\Users\user\Build\someapp -o C:\Users\user\Installer -b someapp_v1.0.0_setup
 ```
+
+# インストーラーの生成
+InnoSetupをインストールし、パスにisccを追加します。
+
+その後に、先程の工程で生成された`.iss`ファイルをisccへ渡します。
+
+```
+$ iscc C:\Users\user\sample.iss
+```
+
+`-o`で指定したディレクトリにインストーラが生成されます。
